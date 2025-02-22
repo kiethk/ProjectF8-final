@@ -1,0 +1,21 @@
+{
+  "name": "project-final",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass scss:assets/css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiethk/ProjectF8-final.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiethk/ProjectF8-final/issues"
+  },
+  "homepage": "https://github.com/kiethk/ProjectF8-final#readme",
+  "description": ""
+}
