@@ -4,7 +4,12 @@
     position: absolute;
     left: 0;
     width: min(1240px, 100%);
-            display: none;
+    display: none;
+
+    @include abstracts.screen(lg) {
+        padding-top: 0;
+        position: initial;
+    }
 
     &__inner {
         --inner-padding: 30px;
@@ -23,6 +28,21 @@
             content: url(../icons/dropdown-arrow.svg);
             filter: var(--dropdown-arrow-color);
         }
+
+        @include abstracts.screen(lg) {
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+            padding: 0 40px;
+
+            &::before {
+                content: none;
+            }
+        }
+
+        @include abstracts.screen(sm) {
+            padding: 0 20px;
+        }
     }
 }
 
@@ -35,6 +55,12 @@
         height: var(--max-inner-height);
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
+
+        @include abstracts.screen(lg) {
+            width: 100%;
+            height: auto;
+            border-right: none;
+        }
     }
 }
 
@@ -44,6 +70,10 @@
 
     & + & {
         margin-top: calc(var(--inner-padding) - 10px);
+
+        @include abstracts.screen(lg) {
+            margin-top: var(--inner-padding);
+        }
     }
     &__icon {
         flex-shrink: 0;
@@ -51,8 +81,12 @@
         height: 36px;
         position: relative;
 
-        @include abstracts.breakpoint(xl) {
+        @include abstracts.screen(xl) {
             display: none;
+        }
+
+        @include abstracts.screen(lg) {
+            display: block;
         }
     }
 
@@ -82,10 +116,18 @@
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 150%;
+
+        @include abstracts.screen(lg) {
+            margin-bottom: 19px;
+        }
     }
 
     &__list {
         margin-top: 19px;
+
+        @include abstracts.screen(lg) {
+            margin-top: 0;
+        }
     }
 
     &__item {
@@ -119,6 +161,13 @@
     padding-left: var(--inner-padding);
     overflow-y: auto;
 
+    @include abstracts.screen(lg) {
+        margin-top: 14px;
+        position: initial;
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
+
     &--not-main {
         inset: initial;
         position: initial;
@@ -126,5 +175,10 @@
         grid-template-columns: repeat(4, 1fr);
         height: var(--max-inner-height);
         padding-left: 0;
+
+        @include abstracts.screen(lg) {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
     }
 }

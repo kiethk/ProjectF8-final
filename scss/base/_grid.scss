@@ -1,20 +1,19 @@
 @use "sass:math";
 
 $grid-breakpoints: (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
     xxl: 1400px,
+    xl: 1200px,
+    lg: 992px,
+    md: 768px,
+    sm: 576px,
 );
 
 $container-max-widths: (
-    sm: 540px,
-    md: 720px,
-    lg: 960px,
-    xl: 1140px,
-    xxl: 1370px,
+    sm: 100%,
+    md: 540px,
+    lg: 720px,
+    xl: 960px,
+    xxl: 1140px,
 );
 $grid-columns: 12;
 $grid-gutter-width: 30px !default;
@@ -44,6 +43,7 @@ $gutters: (
 
 .container {
     @extend .container-fluid;
+    width: 1370px;
 }
 
 .row {
@@ -64,12 +64,12 @@ $gutters: (
 }
 
 @mixin makeMediaQuery($dimension) {
-    @media (min-width: $dimension) {
+    @media (max-width: ( $dimension - 0.02)) {
         @content;
     }
 }
 
-@mixin makeRowColumns($infix) {
+@mixin makeRowColumns($infix: null) {
     @for $i from 1 through $grid-columns * 0.5 {
         .row-cols#{$infix}-#{$i} > * {
             flex: 0 0 auto;
@@ -78,7 +78,7 @@ $gutters: (
     }
 }
 
-@mixin makeColumns($infix) {
+@mixin makeColumns($infix: null) {
     @for $i from 1 through $grid-columns {
         .col#{$infix}-#{$i} {
             flex: 0 0 auto;
@@ -87,7 +87,7 @@ $gutters: (
     }
 }
 
-@mixin makeOffset($infix) {
+@mixin makeOffset($infix: null) {
     @for $i from 0 to $grid-columns {
         .offset#{$infix}-#{$i} {
             margin-left: math.div(100%, $grid-columns) * $i;
@@ -95,7 +95,7 @@ $gutters: (
     }
 }
 
-@mixin makeGutters($infix) {
+@mixin makeGutters($infix: null) {
     @each $i, $ratio in $gutters {
         .g#{$infix}-#{$i},
         .gx#{$infix}-#{$i} {
@@ -108,9 +108,17 @@ $gutters: (
     }
 }
 
+@include makeRowColumns();
+
+@include makeColumns();
+
+@include makeOffset();
+
+@include makeGutters();
+
 @each $breakpoint, $dimension in $grid-breakpoints {
     $max-width: map-get($container-max-widths, $breakpoint);
-    $infix: if($breakpoint == xs, "", -#{$breakpoint});
+    $infix: -#{$breakpoint};
 
     @include makeMediaQuery($dimension) {
         .container {

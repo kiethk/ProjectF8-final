@@ -1,0 +1,39 @@
+// Filter Button
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 12px;
+    border-radius: 6px;
+
+    height: 36px;
+    color: var(--filter-btn-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 142.857%;
+    background: var(--filter-btn-bg);
+}
+
+// Like Button
+.like-btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 20px 60px var(--like-btn-shadow);
+
+    &:not(&--liked) &__icon--liked {
+        display: none;
+    }
+
+    &--liked .like-btn__icon {
+        display: none;
+    }
+
+    &__icon--liked {
+        width: 24px;
+    }
+}
