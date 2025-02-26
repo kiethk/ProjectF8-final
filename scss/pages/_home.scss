@@ -36,4 +36,22 @@
         display: flex;
         justify-content: space-between;
     }
+
+    &__footer {
+        color: #9e9da8;
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+
+        &-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--text-color);
+            }
+        }
+    }
 }

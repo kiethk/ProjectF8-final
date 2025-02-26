@@ -8,6 +8,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -23,6 +24,7 @@ a {
 }
 
 button {
+    user-select: none;
     cursor: pointer;
     border: none;
     outline: none;
@@ -36,9 +38,16 @@ button,
 input,
 textarea,
 select {
+    padding: 0;
+    border: none;
+    outline: none;
     font-family: inherit;
     color: inherit;
     -webkit-tap-highlight-color: transparent;
+}
+
+input {
+    background: transparent;
 }
 
 .icon {

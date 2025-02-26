@@ -33,10 +33,28 @@ html.dark {
     --filter-btn-color: #fff;
     --filter-btn-bg: #171c28;
 
-    --like-btn-shadow:rgba(124, 124, 124, 0.20);
+    --like-btn-shadow: rgba(124, 124, 124, 0.2);
 
     //     Product Card
     --product-card-bg: #171c28;
+    --product-card-branch-color: #9e9da8;
+
+    //     Filter Form
+    --filter-form-bg: #292e39;
+    --filter-form-shadow: 0px 40px 90px rgba(0, 0, 0, 0.4);
+
+    --filter-arrow-filter: brightness(0) saturate(100%) invert(16%) sepia(9%) saturate(1343%) hue-rotate(183deg)
+        brightness(88%) contrast(91%);
+    --filter-form-tag-bg: #171c28;
+    --filter-form-tag-color: #9e9da8;
+
+    //     Footer
+    --footer-bg: #fff;
+    --footer-text-color: #292e39;
+    --footer-link-color: #000;
+    --footer-item-icon-box-bg: #e7e7e7;
+    --footer-follow-item-color: #fff;
+    --footer-bot-bg: #9d9d9d;
 
     @include abstracts.screen(lg) {
         --header-shadow-color: rgba(0, 0, 0, 0.2);
