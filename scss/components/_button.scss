@@ -41,21 +41,25 @@
 // Buttons
 
 .btn {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 46px;
     padding: 0 20px;
     border-radius: 6px;
     background: #f8f8fb;
+    gap: 10px;
 
     font-size: 1.8rem;
     font-weight: 500;
     user-select: none;
 
-    & + & {
-        margin-left: 20px;
+    &--small {
+        height: 40px;
     }
 
     &--text {
-        color: #9e9da8;
         font-weight: 400;
         background: transparent;
     }
@@ -74,6 +78,11 @@
         border-radius: 99px;
     }
 
+    &--danger {
+        background: #ed4337;
+        color: #fff;
+    }
+
     &:hover {
         opacity: 0.9;
     }
@@ -82,5 +91,15 @@
     &--disabled {
         opacity: 0.5;
         pointer-events: none;
+    }
+
+    & + & {
+        &:not(.btn--no-margin) {
+            margin-left: 20px;
+        }
+    }
+
+    &--no-margin {
+        margin-left: 0;
     }
 }

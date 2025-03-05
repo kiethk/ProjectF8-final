@@ -1,7 +1,7 @@
 @use "../abstracts";
 
 .footer {
-    margin-top: 70px;
+    background: none;
     color: var(--footer-text-color);
     position: relative;
     &__inner {
@@ -14,7 +14,7 @@
         align-items: center;
         justify-content: center;
         position: absolute;
-        z-index: 2;
+        z-index: 1;
         top: 40px;
         left: 50%;
         translate: -50% -50%;

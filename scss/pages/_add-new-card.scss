@@ -1,0 +1,11 @@
+.add-new-card__heading {
+    margin-bottom: 30px;
+}
+
+.form-card {
+    &__bottom {
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

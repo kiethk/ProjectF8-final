@@ -5,28 +5,9 @@
     align-items: center;
     column-gap: 14px;
 
-    @include abstracts.screen(lg) {
-        column-gap: 10px;
-        margin-left: 30px;
-    }
-
-    @include abstracts.screen(md) {
-        margin-left: 0;
-    }
-
     &__title {
         font-size: 22px;
         font-weight: 700;
         line-height: 145.455%;
-
-        @include abstracts.screen(lg) {
-            font-size: 1.8rem;
-        }
-    }
-
-    &__img {
-        @include abstracts.screen(lg) {
-            width: 24px;
-        }
     }
 }

@@ -46,22 +46,6 @@
     &__form {
         margin-top: 30px;
 
-        &-label {
-            display: block;
-            font-size: 2.2rem;
-            font-weight: 500;
-            line-height: 145.455%;
-
-            &--small {
-                margin-bottom: 10px;
-                font-size: 1.4rem;
-
-                @include abstracts.screen(sm) {
-                    width: 100%;
-                }
-            }
-        }
-
         &-group {
             margin-top: 20px;
 
@@ -101,8 +85,7 @@
             }
         }
 
-        &-text-input,
-        &-select-wrap {
+        &-text-input {
             border-radius: 6px;
             border: 1px solid #d2d1d6;
         }
@@ -148,67 +131,10 @@
             }
 
             @include abstracts.screen(sm) {
-                font-size: 1.6rem;
+                font-size: 1.6rem !important;
             }
         }
 
-        &-select-wrap {
-            height: 45px;
-            display: flex;
-            align-items: center;
-        }
-
-        &-select {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 14px;
-            height: calc(100% - 10px);
-            min-width: var(--width, 108px);
-            font-size: 1.4rem;
-            font-weight: 500;
-            line-height: 142.857%;
-
-            cursor: pointer;
-
-            &-arrow {
-                width: 24px;
-            }
-
-            @include abstracts.screen(xl) {
-                flex: 1;
-            }
-        }
-
-        &-select + &-select {
-            border-left: 1px solid #d2d1d6;
-        }
-
-        &-tags {
-            display: flex;
-            gap: 10px 20px;
-            flex-wrap: wrap;
-
-            @include abstracts.screen(sm) {
-                gap: 10px 9px;
-            }
-        }
-
-        &-tag {
-            padding: 6px 12px;
-            border-radius: 6px;
-            color: var(--filter-form-tag-color);
-            background: var(--filter-form-tag-bg);
-
-            font-size: 1.4rem;
-            font-weight: 500;
-            line-height: 142.857%;
-            transition: color 0.3s ease;
-
-            &:hover {
-                color: var(--text-color);
-            }
-        }
     }
 
     //     End Form
